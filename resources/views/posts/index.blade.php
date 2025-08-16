@@ -1,27 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>All Posts</h1>
+<x-layout>
 
-    <a href="{{ route('posts.create') }}">Create new post</a>
-    @foreach($posts as $post)
-    <div>
-        <h2>{{ $post->title }}</h2>
-        <p>{{ $post->body }}</p>
-        <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
-        <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button type="submit" onclick="return confirm('Are you sure you want to delete this post?')">Delete</button>
-        </form>
+    <div class="post-container">
+
+        @foreach($posts as $post)
+        <div class="post-card">
+            <a href="/post/{{ $post->id }}"><h2 class="post-title">{{ $post->title }}</h2></a>
+            <p class="post-body">{{ $post->body }}</p>
+            <div class="btn-container">
+                <a class="btn-edit" href="{{ route('posts.edit', $post->id) }}">
+                    Edit
+                </a>
+                <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn-delete" type="submit" onclick="return confirm('Are you sure you want to delete this post?')">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+        @endforeach
+
     </div>
-    @endforeach
 
-</body>
-</html>
+</x-layout>
