@@ -13,9 +13,18 @@
 <body>
 
     @if (session('success'))
-        <div id="flash" class="p-4 text-center bg-green-50 text-green-500 font-bold">
+        <div id="success-msg" class="bg-pink-100 text-pink-700 px-4 py-3 rounded relative text-center font-bold" role="alert">
             {{ session('success') }}
         </div>
+
+        <script>
+            setTimeout(function() {
+                const msg = document.getElementById('success-msg');
+                if(msg){
+                    msg.style.display = 'none';
+                }
+            }, 2000); // 3 seconds
+        </script>
     @endif
     <header>
         <nav class="navbar">

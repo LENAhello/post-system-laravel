@@ -18,7 +18,7 @@ body {
     @apply p-2 bg-transparent 
 }
 .container{
-    @apply flex items-center justify-center;
+    @apply flex flex-col justify-center items-center
 }
 
 .navbar {
@@ -40,19 +40,16 @@ body {
     @apply flex 
 }
 .post-card{
-    @apply border-1 rounded border-slate-500 max-w-xs m-2 p-2 flex-col
+    @apply border-2 rounded-xl max-w-xs m-2 p-2 flex flex-col justify-between
 }
 .post-title{
     @apply text-2xl font-bold 
 }
 .btn-container{
-    @apply border
+    @apply flex justify-end
 }
-.btn-edit{
-    @apply bg-cyan-600 p-2 text-white rounded
-}
-.btn-delete{
-    @apply bg-red-700 p-2 text-white rounded
+.button{
+    @apply p-2 text-black rounded m-2 
 }
 .icon{
     @apply w-4
