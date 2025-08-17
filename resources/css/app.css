@@ -37,10 +37,10 @@ body {
     @apply text-2xl
 }
 .post-container{
-    @apply flex 
+    @apply flex flex-wrap justify-center
 }
 .post-card{
-    @apply border-2 rounded-xl max-w-xs m-2 p-2 flex flex-col justify-between
+    @apply border-2 rounded-xl m-2 p-2 flex flex-col justify-between w-[25%]
 }
 .post-title{
     @apply text-2xl font-bold 
