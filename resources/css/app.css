@@ -46,7 +46,7 @@ body {
     @apply text-2xl font-bold 
 }
 .btn-container{
-    @apply flex justify-end
+    @apply flex justify-end mt-2
 }
 .button{
     @apply py-2 px-4 font-semibold rounded m-2 flex items-center justify-between
